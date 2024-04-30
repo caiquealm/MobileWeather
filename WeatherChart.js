@@ -1,4 +1,4 @@
-import moment from 'moment'
+import moment, { now } from 'moment'
 import { Chart, Line, Area, HorizontalAxis, VerticalAxis } from 'react-native-responsive-linechart'
 
 const WeatherChart = ({yDomain, values, hours, color}) => {
@@ -13,6 +13,14 @@ const WeatherChart = ({yDomain, values, hours, color}) => {
         } else {
             return moment(date).format('hh:mm');
         }
+    }
+
+    const getHours = () => {
+        const nowDate = new Date();
+        let hours = nowDate.getHours();
+        let date = nowDate.getDate();
+        let minutes = nowDate.getMinutes();
+        
     }
 
     return (
